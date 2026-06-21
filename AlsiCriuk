@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alsi Criuk - Kerenyahan Kuliner Lokal Pedas-Keju Kekinian</title>
+    
+    <!-- Meta SEO Fondasional -->
+    <meta name="description" content="Alsi Criuk - Camilan Kulit Crispy Kampus dan Usus Crispy berkualitas tinggi dengan siraman saus pedas keju mewah. Kuliner Mahasiswa Murah, higienis, dan terstruktur.">
+    <meta name="keywords" content="Alsi Criuk, Camilan Kulit Crispy Kampus, Kuliner Mahasiswa Murah, Usus Crispy, Saus Pedas Keju, Sita Dewi, UMKM Mahasiswa">
+    <meta name="author" content="Sita Dewi">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: {
+                            50: '#f0f6fc',
+                            100: '#e1edf8',
+                            500: '#1F4E79', // Primary Color
+                            600: '#1a4267',
+                            700: '#153654',
+                            900: '#0b1d2e',
+                        },
+                        cheeseOrange: {
+                            500: '#E67E22', // Accent Color
+                            600: '#D35400',
+                            700: '#A04000',
+                        }
+                    },
+                    fontFamily: {
+                        libre: ['"Libre Baskerville"', 'serif'],
+                        inter: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Libre Baskerville & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .custom-grid-bg {
+            background-image: radial-gradient(#ffffff20 1px, transparent 1px), radial-gradient(#ffffff20 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+    </style>
+</head>
+<body class="font-inter bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-deepBlue-900/95 backdrop-blur-md border-b border-deepBlue-700/50 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <!-- Crisp Logo Icon (SVG) -->
+                    <div class="w-10 h-10 bg-cheeseOrange-500 rounded-lg flex items-center justify-center shadow-lg shadow-cheeseOrange-500/30">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <a href="#" class="font-libre text-xl sm:text-2xl font-bold text-white tracking-tight">ALSI CRIUK</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#hero" class="text-slate-300 hover:text-cheeseOrange-500 font-medium transition-colors">Beranda</a>
+                    <a href="#keunggulan" class="text-slate-300 hover:text-cheeseOrange-500 font-medium transition-colors">Keunggulan</a>
+                    <a href="#menu-b2c" class="text-slate-300 hover:text-cheeseOrange-500 font-medium transition-colors">Katalog Menu</a>
+                    <a href="#alur-po" class="text-slate-300 hover:text-cheeseOrange-500 font-medium transition-colors">Alur Pemesanan</a>
+                    <a href="#kemitraan-b2b" class="text-slate-300 hover:text-cheeseOrange-500 font-medium transition-colors">Kemitraan B2B</a>
+                    <a href="#generator-order" class="bg-cheeseOrange-500 hover:bg-cheeseOrange-600 text-white font-semibold px-5  py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-cheeseOrange-500/20 text-sm">Pesan Cepat</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white p-2 focus:outline-none focus:ring-2 focus:ring-cheeseOrange-500 rounded-lg">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-deepBlue-900 border-b border-deepBlue-700 px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
+            <a href="#hero" class="block text-slate-300 hover:text-white py-2 border-b border-deepBlue-800">Beranda</a>
+            <a href="#keunggulan" class="block text-slate-300 hover:text-white py-2 border-b border-deepBlue-800">Keunggulan</a>
+            <a href="#menu-b2c" class="block text-slate-300 hover:text-white py-2 border-b border-deepBlue-800">Katalog Menu</a>
+            <a href="#alur-po" class="block text-slate-300 hover:text-white py-2 border-b border-deepBlue-800">Alur Pemesanan</a>
+            <a href="#kemitraan-b2b" class="block text-slate-300 hover:text-white py-2">Kemitraan B2B</a>
+            <a href="#generator-order" class="block text-center bg-cheeseOrange-500 text-white py-3 rounded-xl font-bold shadow-md shadow-cheeseOrange-500/20">Pesan Cepat Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-32 sm:pt-40 pb-20 sm:pb-32 bg-gradient-to-br from-deepBlue-900 via-deepBlue-700 to-deepBlue-900 text-white overflow-hidden custom-grid-bg">
+        <div class="absolute inset-0 bg-deepBlue-900/65 z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-xs sm:text-sm font-semibold text-cheeseOrange-500">
+                        <span class="w-2 h-2 rounded-full bg-cheeseOrange-500 animate-pulse"></span>
+                        UMKM Mahasiswa Terstruktur Berbasis BMC
+                    </div>
+                    <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                        Kerenyahan Kuliner Lokal dengan Cita Rasa <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-cheeseOrange-500">Pedas-Keju Kekinian</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Nikmati sensasi kelezatan usus dan kulit crispy premium berbalut saus keju mewah bercita rasa pedas meledak. Camilan terbaik untuk menemani aktivitas belajar dan nongkrong Anda di area kampus.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#generator-order" class="inline-flex items-center justify-center gap-2 bg-cheeseOrange-500 hover:bg-cheeseOrange-600 text-white px-8 py-4 rounded-xl font-bold text-base transition-all duration-300 shadow-xl shadow-cheeseOrange-500/30 transform hover:-translate-y-1">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            Pesan Sekarang
+                        </a>
+                        <a href="#kemitraan-b2b" class="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300 transform hover:-translate-y-1">
+                            <i data-lucide="handshake" class="w-5 h-5"></i>
+                            Kemitraan B2B
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-8 pt-8 border-t border-white/10">
+                        <div>
+                            <p class="text-3xl font-bold text-cheeseOrange-500">100%</p>
+                            <p class="text-xs text-slate-400">Bahan Segar & Higienis</p>
+                        </div>
+                        <div class="border-l border-white/15 h-8"></div>
+                        <div>
+                            <p class="text-3xl font-bold text-cheeseOrange-500">PO</p>
+                            <p class="text-xs text-slate-400">Freshly Made Daily</p>
+                        </div>
+                        <div class="border-l border-white/15 h-8"></div>
+                        <div>
+                            <p class="text-3xl font-bold text-cheeseOrange-500">Rp 10rb+</p>
+                            <p class="text-xs text-slate-400">Harga Kantong Mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Column (Premium Food Illustration) -->
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-tr from-cheeseOrange-500 to-amber-400 rounded-full flex items-center justify-center shadow-2xl shadow-cheeseOrange-500/20">
+                        <div class="absolute inset-4 bg-deepBlue-900 rounded-full flex flex-col items-center justify-center overflow-hidden border-2 border-white/10 p-6 text-center">
+                            <!-- Premium Inline SVG Illustration of Crispy Snack Bowl -->
+                            <svg class="w-40 h-40 text-cheeseOrange-500 drop-shadow-lg mb-2" viewBox="0 0 100 100" fill="none">
+                                <!-- Steam Lines -->
+                                <path d="M40 25 C38 18, 44 14, 42 10" stroke="#F5B041" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M50 22 C48 15, 54 12, 51 8" stroke="#F5B041" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M60 25 C58 19, 64 15, 62 11" stroke="#F5B041" stroke-width="2" stroke-linecap="round"/>
+                                <!-- Crispy items in bowl -->
+                                <circle cx="38" cy="45" r="8" fill="#D35400"/>
+                                <circle cx="50" cy="40" r="10" fill="#E67E22"/>
+                                <circle cx="62" cy="44" r="8" fill="#F39C12"/>
+                                <rect x="42" y="45" width="16" height="10" rx="3" fill="#D35400" transform="rotate(15 50 50)"/>
+                                <rect x="35" y="42" width="12" height="8" rx="2" fill="#F39C12" transform="rotate(-25 41 46)"/>
+                                <!-- Cheese Sauce drips -->
+                                <path d="M30 45 C45 35, 55 35, 70 45 C70 52, 60 55, 50 55 C40 55, 30 52, 30 45 Z" fill="#F1C40F"/>
+                                <path d="M45 48 C45 54, 48 56, 48 58 C48 60, 44 60, 44 58 Z" fill="#F1C40F"/>
+                                <path d="M55 49 C55 56, 58 58, 58 60 C58 61, 56 61, 56 60 Z" fill="#F1C40F"/>
+                                <!-- Bowl structure -->
+                                <path d="M25 45 C25 65, 75 65, 75 45 Z" fill="#1F4E79" stroke="#fff" stroke-width="2"/>
+                                <path d="M25 45 C40 48, 60 48, 75 45" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                <!-- Small decorative chips -->
+                                <circle cx="18" cy="70" r="3" fill="#E67E22"/>
+                                <circle cx="82" cy="65" r="2.5" fill="#F39C12"/>
+                            </svg>
+                            <span class="font-libre text-lg text-white block mt-1 tracking-wider font-bold">ALSI CRIUK</span>
+                            <span class="text-xs text-slate-300 font-medium">Usus & Kulit Crispy Premium</span>
+                        </div>
+                        
+                        <!-- Floating Badges -->
+                        <div class="absolute -top-4 -right-4 bg-white text-deepBlue-900 p-3 rounded-2xl shadow-xl flex items-center gap-2 transform rotate-12">
+                            <i data-lucide="flame" class="w-5 h-5 text-red-500 fill-red-500"></i>
+                            <div class="text-left">
+                                <p class="text-xs font-bold leading-none">Pedas Keju</p>
+                                <p class="text-[10px] text-slate-500">Saus Rahasia</p>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white text-deepBlue-900 p-3 rounded-2xl shadow-xl flex items-center gap-2 transform -rotate-6">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-amber-500 fill-amber-500"></i>
+                            <div class="text-left">
+                                <p class="text-xs font-bold leading-none">Crispy Gila!</p>
+                                <p class="text-[10px] text-slate-500">Sangat Renyah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPOSISI NILAI (VALUE PROPOSITIONS) -->
+    <section id="keunggulan" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="font-libre section-title">Kenapa Harus Alsi Criuk?</h2>
+                <p class="section-subtitle">Model bisnis terstruktur yang menjamin kepuasan rasa, kualitas, dan harga demi kepuasan lidah Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value Card 1 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center hover:shadow-xl hover:shadow-deepBlue-500/5 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-deepBlue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-deepBlue-500 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="crown" class="w-7 h-7 text-deepBlue-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Rasa Juara & Gurih</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Perpaduan renyah legendaris usus & kulit crispy pilihan dengan kucuran saus keju pedas rahasia ala premium.
+                    </p>
+                </div>
+
+                <!-- Value Card 2 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center hover:shadow-xl hover:shadow-deepBlue-500/5 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-deepBlue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-deepBlue-500 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="wallet" class="w-7 h-7 text-deepBlue-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Harga Kantong Mahasiswa</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Nikmati porsi kenyang yang bersahabat tanpa menguras dompet bulanan Anda. Cocok untuk konsumsi harian.
+                    </p>
+                </div>
+
+                <!-- Value Card 3 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center hover:shadow-xl hover:shadow-deepBlue-500/5 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-deepBlue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-deepBlue-500 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-deepBlue-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Higienis & Fresh</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Bahan baku kulit dan usus dipasok segar setiap hari dan diolah melalui standard sanitasi yang ketat.
+                    </p>
+                </div>
+
+                <!-- Value Card 4 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center hover:shadow-xl hover:shadow-deepBlue-500/5 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-deepBlue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-deepBlue-500 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="sliders" class="w-7 h-7 text-deepBlue-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Level Pedas Kustom</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Bebas pilih level kepedasan dari level santai hingga super pedas membakar yang dipadukan gurihnya keju.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATALOG MENU (B2C) -->
+    <section id="menu-b2c" class="bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="font-libre section-title">Katalog Menu Andalan</h2>
+                <p class="section-subtitle">Pilih menu andalan terlaris kami yang disukai ribuan mahasiswa di lingkungan kampus.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="h-56 bg-gradient-to-br from-deepBlue-50 to-deepBlue-100 p-6 flex items-center justify-center relative">
+                        <!-- Custom Menu Art SVG -->
+                        <svg class="w-32 h-32 text-deepBlue-500" viewBox="0 0 100 100" fill="none">
+                            <rect x="25" y="30" width="50" height="40" rx="4" fill="#1F4E79"/>
+                            <path d="M25 45 C35 48, 65 48, 75 45" stroke="#fff" stroke-width="2"/>
+                            <!-- golden crispy skin pieces -->
+                            <rect x="35" y="20" width="12" height="15" rx="3" fill="#E67E22" transform="rotate(15 35 20)"/>
+                            <rect x="52" y="15" width="14" height="12" rx="3" fill="#F39C12" transform="rotate(-10 52 15)"/>
+                            <rect x="42" y="35" width="15" height="10" rx="3" fill="#D35400" transform="rotate(5 42 35)"/>
+                        </svg>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">Favorit</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-libre text-xl font-bold text-deepBlue-500">Paket Kulit Crispy</h3>
+                            <span class="text-lg font-bold text-cheeseOrange-500">Rp 12.000</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Kulit ayam premium pilihan digoreng garing renyah maksimal, disajikan dengan limpahan saur pedas keju spesial khas Alsi Criuk.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="package" class="w-4 h-4 text-deepBlue-500"></i> Box Higienis</span>
+                            <span class="flex items-center gap-1"><i data-lucide="flame" class="w-4 h-4 text-red-500"></i> Level 0 - 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="h-56 bg-gradient-to-br from-deepBlue-50 to-deepBlue-100 p-6 flex items-center justify-center relative">
+                        <!-- Custom Menu Art SVG -->
+                        <svg class="w-32 h-32 text-deepBlue-500" viewBox="0 0 100 100" fill="none">
+                            <rect x="25" y="30" width="50" height="40" rx="4" fill="#1F4E79"/>
+                            <path d="M25 45 C35 48, 65 48, 75 45" stroke="#fff" stroke-width="2"/>
+                            <!-- loop-like intestine shapes -->
+                            <path d="M35 15 C35 25, 45 25, 45 15" stroke="#E67E22" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M48 12 C48 22, 58 22, 58 12" stroke="#F39C12" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M60 18 C60 28, 70 28, 70 18" stroke="#D35400" stroke-width="6" stroke-linecap="round"/>
+                        </svg>
+                        <span class="absolute top-4 right-4 bg-cheeseOrange-500 text-white text-xs font-bold px-3 py-1 rounded-full">Populer</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-libre text-xl font-bold text-deepBlue-500">Paket Usus Crispy</h3>
+                            <span class="text-lg font-bold text-cheeseOrange-500">Rp 10.000</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Usus bersih berkualitas tinggi yang digoreng kering dengan tepung bumbu spesial. Sangat renyah, gurih, dan bebas bau amis.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="package" class="w-4 h-4 text-deepBlue-500"></i> Box Higienis</span>
+                            <span class="flex items-center gap-1"><i data-lucide="flame" class="w-4 h-4 text-red-500"></i> Level 0 - 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="h-56 bg-gradient-to-br from-deepBlue-50 to-deepBlue-100 p-6 flex items-center justify-center relative">
+                        <!-- Custom Menu Art SVG -->
+                        <svg class="w-32 h-32 text-deepBlue-500" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="30" fill="#F1C40F"/>
+                            <circle cx="50" cy="50" r="24" fill="#F39C12"/>
+                            <!-- spicy details -->
+                            <path d="M45 40 L55 60 M55 40 L45 60" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <span class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">Wajib Coba</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-libre text-xl font-bold text-deepBlue-500">Ekstra Saus Keju</h3>
+                            <span class="text-lg font-bold text-cheeseOrange-500">Rp 3.000</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Tambahan cocolan saus keju pedas krimi yang melimpah ruah. Bikin sensasi kriuk makin berlipat ganda kenikmatannya.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="droplet" class="w-4 h-4 text-deepBlue-500"></i> Cup Saus Pisah</span>
+                            <span class="flex items-center gap-1"><i data-lucide="thumbs-up" class="w-4 h-4 text-amber-500"></i> Best-Seller</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUR PRE-ORDER (INFOGRAFIS) -->
+    <section id="alur-po" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="font-libre section-title">Alur Sistem Pre-Order (PO)</h2>
+                <p class="section-subtitle">Kami mengutamakan kualitas. Sistem PO menjamin menu yang Anda terima selalu digoreng hangat dan fresh daily.</p>
+            </div>
+
+            <!-- Visual 1-2-3 Infographic -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connection Line (Desktop Only) -->
+                <div class="hidden md:block absolute top-1/2 left-[15%] right-[15%] h-1 bg-gradient-to-r from-deepBlue-100 via-cheeseOrange-500 to-deepBlue-100 -translate-y-12 -z-10"></div>
+                
+                <!-- Step 1 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center relative z-10 shadow-sm">
+                    <div class="w-16 h-16 bg-deepBlue-500 text-white font-libre text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-deepBlue-500/20">
+                        1
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Pilih Menu & Pesan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Pilih menu andalan, tentukan tingkat kepedasan, dan masukkan lokasi kampus Anda menggunakan alat generator order di bawah.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center relative z-10 shadow-sm">
+                    <div class="w-16 h-16 bg-cheeseOrange-500 text-white font-libre text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cheeseOrange-500/20">
+                        2
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Proses Penggorengan Fresh</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Pesanan Anda akan digoreng mendadak (*freshly fried*) sesaat sebelum pengantaran untuk menjamin kualitas kerenyahan maksimal.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-center relative z-10 shadow-sm">
+                    <div class="w-16 h-16 bg-deepBlue-500 text-white font-libre text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-deepBlue-500/20">
+                        3
+                    </div>
+                    <h3 class="font-libre text-lg font-bold text-deepBlue-500 mb-3">Pengantaran & COD</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Pesanan diantarkan langsung ke area titik temu kampus atau dinikmati via Cash On Delivery (COD) yang nyaman dan praktis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE B2C ORDER GENERATOR -->
+    <section id="generator-order" class="bg-gradient-to-br from-deepBlue-900 to-deepBlue-700 text-white overflow-hidden relative custom-grid-bg">
+        <div class="absolute inset-0 bg-deepBlue-900/60 z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-xs sm:text-sm font-semibold text-cheeseOrange-500 mb-4">
+                    <i data-lucide="zap" class="w-4 h-4 fill-cheeseOrange-500 text-cheeseOrange-500"></i>
+                    B2C Order Builder Instan
+                </div>
+                <h2 class="font-libre text-3xl sm:text-4xl font-bold">Sesuaikan Pesanan Anda</h2>
+                <p class="text-slate-300 mt-2 max-w-xl mx-auto">Gunakan formulir pintar ini untuk membuat rincian pesanan Anda secara otomatis ke WhatsApp kami.</p>
+            </div>
+
+            <div class="bg-white text-slate-800 rounded-3xl shadow-2xl p-6 sm:p-10">
+                <form id="whatsapp-order-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Nama Lengkap -->
+                        <div>
+                            <label class="block text-sm font-semibold text-deepBlue-500 mb-2" for="b2c-name">Nama Lengkap</label>
+                            <input type="text" id="b2c-name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cheeseOrange-500 focus:border-cheeseOrange-500 outline-none transition-all" placeholder="Masukkan nama Anda" required>
+                        </div>
+
+                        <!-- Lokasi Kampus / Titik Temu -->
+                        <div>
+                            <label class="block text-sm font-semibold text-deepBlue-500 mb-2" for="b2c-loc">Lokasi Kampus / Titik Temu COD</label>
+                            <input type="text" id="b2c-loc" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cheeseOrange-500 focus:border-cheeseOrange-500 outline-none transition-all" placeholder="Contoh: Depan Perpus Pusat Unpad" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Pilihan Paket -->
+                        <div>
+                            <label class="block text-sm font-semibold text-deepBlue-500 mb-2" for="b2c-package">Pilih Menu Paket Utama</label>
+                            <select id="b2c-package" class="w-full px-4 py-3 border border-slate-200 rounded-xl bg-white focus:ring-2 focus:ring-cheeseOrange-500 focus:border-cheeseOrange-500 outline-none transition-all cursor-pointer">
+                                <option value="Paket Kulit Crispy (Rp 12.000)">Paket Kulit Crispy — Rp 12.000</option>
+                                <option value="Paket Usus Crispy (Rp 10.000)">Paket Usus Crispy — Rp 10.000</option>
+                                <option value="Paket Mix Kulit & Usus (Rp 15.000)">Paket Mix (Kulit + Usus) — Rp 15.000</option>
+                            </select>
+                        </div>
+
+                        <!-- Level Pedas -->
+                        <div>
+                            <label class="block text-sm font-semibold text-deepBlue-500 mb-2" for="b2c-level">Pilih Level Pedas Keju</label>
+                            <select id="b2c-level" class="w-full px-4 py-3 border border-slate-200 rounded-xl bg-white focus:ring-2 focus:ring-cheeseOrange-500 focus:border-cheeseOrange-500 outline-none transition-all cursor-pointer">
+                                <option value="Level 0 - Gurih Original Keju">Level 0 - Gurih Original Keju</option>
+                                <option value="Level 1 - Pedas Santai">Level 1 - Pedas Santai</option>
+                                <option value="Level 2 - Pedas Sedang">Level 2 - Pedas Sedang (Recommended)</option>
+                                <option value="Level 3 - Pedas Nyetrum">Level 3 - Pedas Nyetrum</option>
+                                <option value="Level 4 - Pedas Kebakaran">Level 4 - Pedas Kebakaran</option>
+                                <option value="Level 5 - Pedas Alsi Dewa">Level 5 - Pedas Alsi Dewa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Ekstra Topping -->
+                    <div>
+                        <span class="block text-sm font-semibold text-deepBlue-500 mb-3">Tambahan Ekstra Topping</span>
+                        <div class="flex flex-wrap gap-4">
+                            <label class="flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl cursor-pointer hover:bg-slate-100 transition-all">
+                                <input type="checkbox" id="extra-sauce" class="w-4 h-4 text-cheeseOrange-500 focus:ring-cheeseOrange-500 rounded border-slate-300">
+                                <span class="text-sm font-medium text-slate-700">Ekstra Saus Keju (+Rp 3.000)</span>
+                            </label>
+                            <label class="flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl cursor-pointer hover:bg-slate-100 transition-all">
+                                <input type="checkbox" id="double-crispy" class="w-4 h-4 text-cheeseOrange-500 focus:ring-cheeseOrange-500 rounded border-slate-300">
+                                <span class="text-sm font-medium text-slate-700">Porsi Ganda / Double (+Rp 6.000)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Live Message Preview Box -->
+                    <div class="bg-deepBlue-50 border border-deepBlue-100 rounded-2xl p-4 sm:p-6 space-y-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-deepBlue-500 flex items-center gap-1.5">
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i> Live Template Chat Preview:
+                        </span>
+                        <div class="text-slate-700 font-mono text-xs sm:text-sm bg-white border border-slate-200 p-4 rounded-xl leading-relaxed whitespace-pre-line" id="live-chat-preview">
+                            Memuat pesan...
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full inline-flex items-center justify-center gap-3 bg-cheeseOrange-500 hover:bg-cheeseOrange-600 text-white font-bold py-4 rounded-xl shadow-xl shadow-cheeseOrange-500/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.864.001-2.64-1.023-5.123-2.887-6.989C16.58 1.884 14.1 1.05 11.464 1.05 6.027 1.05 1.602 5.464 1.599 10.915c-.001 1.701.447 3.361 1.298 4.837l-1.018 3.714 3.805-.997s.001 0 .002 0z"/>
+                        </svg>
+                        Kirim Pemesanan via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B PARTNERSHIP SECTION -->
+    <section id="kemitraan-b2b" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-deepBlue-50 rounded-full border border-deepBlue-100 text-xs sm:text-sm font-semibold text-deepBlue-500">
+                        <i data-lucide="handshake" class="w-4 h-4"></i>
+                        Peluang Kerja Sama B2B
+                    </div>
+                    <h2 class="font-libre text-3xl sm:text-4xl font-bold text-deepBlue-500 leading-tight">
+                        Kolaborasi Bisnis Terstruktur & Saling Menguntungkan
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        Manajemen Alsi Criuk dikelola sebagai entitas UMKM mahasiswa profesional dengan tata kelola terstruktur (*Business Model Canvas*). Kami membuka peluang kerja sama yang menguntungkan bagi:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-deepBlue-50 text-deepBlue-500 flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </span>
+                            <div class="text-slate-700">
+                                <strong>Penyelenggara Event & Bazar Kampus:</strong> Slot penempatan *booth* makanan kekinian dengan jaminan daya tarik tinggi bagi pengunjung mahasiswa.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-deepBlue-50 text-deepBlue-500 flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </span>
+                            <div class="text-slate-700">
+                                <strong>Mitra Supplier Bahan Baku:</strong> Kerja sama pasokan kulit, usus ayam/sapi segar, serta bumbu saus berkualitas tinggi secara berkelanjutan.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-deepBlue-50 text-deepBlue-500 flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </span>
+                            <div class="text-slate-700">
+                                <strong>Inkubator Bisnis & Sponsor:</strong> Pendanaan atau akselerasi program kewirausahaan mahasiswa dengan laporan performa yang transparan.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Form Column (B2B Form) -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-xl relative">
+                    <!-- Successful Submit Overlay Message (Dynamic) -->
+                    <div id="b2b-success-overlay" class="hidden absolute inset-0 bg-deepBlue-900 text-white rounded-3xl p-8 flex flex-col items-center justify-center text-center z-20 transition-all duration-500">
+                        <div class="w-20 h-20 bg-cheeseOrange-500 rounded-full flex items-center justify-center mb-6 shadow-xl shadow-cheeseOrange-500/20">
+                            <i data-lucide="check-circle" class="w-12 h-12 text-white"></i>
+                        </div>
+                        <h3 class="font-libre text-2xl font-bold mb-2">Pesan Kerja Sama Terkirim!</h3>
+                        <p class="text-slate-300 text-sm max-w-sm mb-6">
+                            Terima kasih atas minat kolaborasi Anda. Admin kemitraan Alsi Criuk akan menghubungi Anda melalui kontak yang dicantumkan dalam kurun waktu 1x24 jam.
+                        </p>
+                        <button onclick="resetB2BForm()" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-all">
+                            Kirim Formulir Baru
+                        </button>
+                    </div>
+
+                    <h3 class="font-libre text-xl font-bold text-deepBlue-500 mb-2">Formulir Kontak Kemitraan</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mb-6">Lengkapi data di bawah untuk pengajuan proposal atau undangan bazar.</p>
+                    
+                    <form id="b2b-partnership-form" class="space-y-5">
+                        <!-- Nama Instansi/Organisasi -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-deepBlue-500 mb-2" for="b2b-org">Instansi / Organisasi / Supplier</label>
+                            <input type="text" id="b2b-org" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-deepBlue-500 focus:border-deepBlue-500 outline-none transition-all text-sm" placeholder="Contoh: BEM FEB Unpad / PT Pemasok Makmur" required>
+                        </div>
+
+                        <!-- Email Resmi -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-deepBlue-500 mb-2" for="b2b-email">Alamat Email</label>
+                            <input type="email" id="b2b-email" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-deepBlue-500 focus:border-deepBlue-500 outline-none transition-all text-sm" placeholder="Contoh: kemitraan@organisasi.org" required>
+                        </div>
+
+                        <!-- No HP / WA -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-deepBlue-500 mb-2" for="b2b-phone">No. Handphone / WhatsApp</label>
+                            <input type="tel" id="b2b-phone" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-deepBlue-500 focus:border-deepBlue-500 outline-none transition-all text-sm" placeholder="Contoh: 081234567890" required>
+                        </div>
+
+                        <!-- Keperluan Kerja Sama -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-deepBlue-500 mb-2" for="b2b-message">Detail Ajakan Kolaborasi</label>
+                            <textarea id="b2b-message" rows="4" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-deepBlue-500 focus:border-deepBlue-500 outline-none transition-all text-sm resize-none" placeholder="Deskripsikan penawaran kerja sama, jadwal kegiatan bazar, atau bentuk kemitraan pasokan bahan baku..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-deepBlue-500 hover:bg-deepBlue-600 text-white font-semibold py-4 rounded-xl shadow-lg transition-all duration-300">
+                            Kirim Formulir Pengajuan
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-deepBlue-900 border-t border-deepBlue-800 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-cheeseOrange-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="font-libre text-xl font-bold text-white tracking-wider">ALSI CRIUK</span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-sm">
+                        Model bisnis kuliner mahasiswa terstruktur yang berkomitmen tinggi menghidangkan kuliner premium, higienis, dan terjangkau di lingkungan kampus Anda.
+                    </p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#" class="w-10 h-10 bg-deepBlue-800 hover:bg-cheeseOrange-500 hover:text-white rounded-full flex items-center justify-center transition-all text-slate-300">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-deepBlue-800 hover:bg-cheeseOrange-500 hover:text-white rounded-full flex items-center justify-center transition-all text-slate-300">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-deepBlue-800 hover:bg-cheeseOrange-500 hover:text-white rounded-full flex items-center justify-center transition-all text-slate-300">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="font-libre text-white font-bold text-sm uppercase tracking-wider mb-4">Navigasi Halaman</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#keunggulan" class="hover:text-white transition-colors">Keunggulan</a></li>
+                        <li><a href="#menu-b2c" class="hover:text-white transition-colors">Katalog Menu</a></li>
+                        <li><a href="#alur-po" class="hover:text-white transition-colors">Sistem Pre-Order</a></li>
+                    </ul>
+                </div>
+
+                <!-- Owner & Dev Credits -->
+                <div>
+                    <h4 class="font-libre text-white font-bold text-sm uppercase tracking-wider mb-4">Struktur Kepemilikan</h4>
+                    <div class="space-y-2 text-sm text-slate-400">
+                        <p class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-cheeseOrange-500"></i> CEO: <strong class="text-white">Sita Dewi</strong></p>
+                        <p class="text-xs">NIM: 1233020072</p>
+                        <p class="flex items-center gap-2 text-xs text-slate-500 pt-2 border-t border-deepBlue-800">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Area Kampus Bandung, Jabar
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom License Copyright -->
+            <div class="border-t border-deepBlue-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Alsi Criuk. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
+                <p class="flex items-center gap-1">Dibuat dengan rasa <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-red-500 animate-pulse"></i> oleh Tim Pengembang Alsi Criuk</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive WhatsApp Order Generator Logic
+        const b2cName = document.getElementById('b2c-name');
+        const b2cLoc = document.getElementById('b2c-loc');
+        const b2cPackage = document.getElementById('b2c-package');
+        const b2cLevel = document.getElementById('b2c-level');
+        const extraSauce = document.getElementById('extra-sauce');
+        const doubleCrispy = document.getElementById('double-crispy');
+        const liveChatPreview = document.getElementById('live-chat-preview');
+        const b2cForm = document.getElementById('whatsapp-order-form');
+
+        function updateLivePreview() {
+            const name = b2cName.value.trim() || '[Nama Anda]';
+            const location = b2cLoc.value.trim() || '[Lokasi / Titik Temu]';
+            const packageVal = b2cPackage.value;
+            const levelVal = b2cLevel.value;
+            
+            let extras = [];
+            let priceAdjust = 0;
+            if (packageVal.includes("12.000")) priceAdjust += 12000;
+            if (packageVal.includes("10.000")) priceAdjust += 10000;
+            if (packageVal.includes("15.000")) priceAdjust += 15000;
+
+            if (extraSauce.checked) {
+                extras.push("Ekstra Saus Keju (+Rp 3.000)");
+                priceAdjust += 3000;
+            }
+            if (doubleCrispy.checked) {
+                extras.push("Porsi Ganda / Double (+Rp 6.000)");
+                priceAdjust += 6000;
+            }
+
+            const extrasText = extras.length > 0 ? extras.join(", ") : "Tidak Ada";
+
+            const previewText = `Halo Admin Alsi Criuk! 👋
+Saya ingin melakukan Pre-Order camilan crispy fresh:
+
+👤 Nama: ${name}
+📍 Lokasi COD: ${location}
+📦 Menu Utama: ${packageVal}
+🔥 Level Pedas: ${levelVal}
+✨ Topping Tambahan: ${extrasText}
+
+💵 Total Estimasi: Rp ${priceAdjust.toLocaleString('id-ID')}
+Mohon diproses untuk pengiriman hangat kampus hari ini ya. Terima kasih!`;
+
+            liveChatPreview.textContent = previewText;
+            return { previewText, priceAdjust };
+        }
+
+        // Attach Event Listeners to B2C Form Fields
+        b2cName.addEventListener('input', updateLivePreview);
+        b2cLoc.addEventListener('input', updateLivePreview);
+        b2cPackage.addEventListener('change', updateLivePreview);
+        b2cLevel.addEventListener('change', updateLivePreview);
+        extraSauce.addEventListener('change', updateLivePreview);
+        doubleCrispy.addEventListener('change', updateLivePreview);
+
+        // Submit B2C WhatsApp Order Form
+        b2cForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const { previewText } = updateLivePreview();
+            
+            // Format to WhatsApp URL Scheme
+            const encodedText = encodeURIComponent(previewText);
+            // Dynamic Dummy Admin Number (or actual client number in real usage)
+            const waNumber = "6281233020072"; 
+            const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
+            
+            // Open in WhatsApp tab
+            window.open(waUrl, '_blank');
+        });
+
+        // Submit B2B Partnership Form with dynamic overlay
+        const b2bForm = document.getElementById('b2b-partnership-form');
+        const b2bSuccessOverlay = document.getElementById('b2b-success-overlay');
+
+        b2bForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show successful submitted message state
+            b2bSuccessOverlay.classList.remove('hidden');
+            b2bSuccessOverlay.classList.add('flex');
+        });
+
+        function resetB2BForm() {
+            b2bForm.reset();
+            b2bSuccessOverlay.classList.remove('flex');
+            b2bSuccessOverlay.classList.add('hidden');
+        }
+
+        // Initialize Live Preview
+        updateLivePreview();
+    </script>
+</body>
+</html>
